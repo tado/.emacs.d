@@ -1,0 +1,73 @@
+;; package
+(require 'package)
+(add-to-list 'package-archives
+	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+ 	     '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
+
+;; basic settings
+(set-language-environment  'utf-8)
+(prefer-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(tool-bar-mode 0)
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+(show-paren-mode t)
+(setq-default line-spacing 3)
+;;(add-to-list 'default-frame-alist '(alpha . 85))
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
+;;theme
+(load-theme 'manoj-dark t)
+
+;;ddskk
+(when (require 'skk nil t)
+  ;;(global-set-key (kbd "C-x j") 'skk-auto-fill-mode)
+  (setq default-input-method "japanese-skk")
+  (require 'skk-study))
+
+
+;;font
+(set-face-attribute 'default nil :family "SF Mono" :height 160)
+;;(set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP"))
+;;(setq face-font-rescale-alist '(("Meiryo" . 0.85)))
+
+;;cursor
+(setq-default cursor-type '(bar . 3))
+
+;; auto-complete
+(require 'auto-complete)
+(require 'auto-complete-config)
+(global-auto-complete-mode t)
+
+;;TidalCycles
+(add-to-list 'load-path "~/.emacs.d/tidal")
+(require 'haskell-mode)
+(require 'tidal)
+
+;;C++
+(defun my-c-c++-mode-init () (setq c-basic-offset 4))
+(add-hook 'c-mode-hook 'my-c-c++-mode-init)
+(add-hook 'c++-mode-hook 'my-c-c++-mode-init)
+
+;; markdown
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (markdown-mode ddskk haskell-mode auto-complete))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
