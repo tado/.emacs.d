@@ -31,7 +31,7 @@
 
 
 ;;font
-(set-face-attribute 'default nil :family "SF Mono" :height 160)
+(set-face-attribute 'default nil :family "SF Mono" :height 140)
 ;;(set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP"))
 ;;(setq face-font-rescale-alist '(("Meiryo" . 0.85)))
 
@@ -44,9 +44,16 @@
 (global-auto-complete-mode t)
 
 ;;TidalCycles
-(add-to-list 'load-path "~/.emacs.d/tidal")
-(require 'haskell-mode)
-(require 'tidal)
+;;(add-to-list 'load-path "~/.emacs.d/tidal")
+;;(require 'haskell-mode)
+;;(require 'tidal)
+(load-file "~/.emacs.d/tidal/tidal.el")
+(setq tidal-interpreter "~/AppData/Roaming/local/bin/stack.exe")
+(setq tidal-interpreter-arguments
+      (list "repl"
+            "--ghci-options=-XOverloadedStrings"
+        ))
+
 
 ;;C++
 (defun my-c-c++-mode-init () (setq c-basic-offset 4))
