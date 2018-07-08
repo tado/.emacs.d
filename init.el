@@ -7,6 +7,8 @@
 (package-initialize)
 
 ;; basic settings
+(setq default-directory "~/")
+(setq command-line-default-directory "~/")
 (set-language-environment  'utf-8)
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -31,7 +33,7 @@
 
 
 ;;font
-(set-face-attribute 'default nil :family "SF Mono" :height 140)
+(set-face-attribute 'default nil :family "SF Mono" :height 120)
 ;;(set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP"))
 ;;(setq face-font-rescale-alist '(("Meiryo" . 0.85)))
 
