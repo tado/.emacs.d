@@ -34,7 +34,7 @@
 
 ;;font
 (set-face-attribute 'default nil :family "SF Mono" :height 120)
-;;(set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP"))
+(set-fontset-font nil 'japanese-jisx0208 (font-spec :family "Noto Sans CJK JP"))
 ;;(setq face-font-rescale-alist '(("Meiryo" . 0.85)))
 
 ;;cursor
