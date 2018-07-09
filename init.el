@@ -26,10 +26,10 @@
 (load-theme 'manoj-dark t)
 
 ;;ddskk
-(when (require 'skk nil t)
-  ;;(global-set-key (kbd "C-x j") 'skk-auto-fill-mode)
-  (setq default-input-method "japanese-skk")
-  (require 'skk-study))
+;;(when (require 'skk nil t)
+;;(global-set-key (kbd "C-x j") 'skk-auto-fill-mode)
+;;(setq default-input-method "japanese-skk")
+;;(require 'skk-study))
 
 
 ;;font
@@ -46,15 +46,15 @@
 (global-auto-complete-mode t)
 
 ;;TidalCycles
-;;(add-to-list 'load-path "~/.emacs.d/tidal")
-;;(require 'haskell-mode)
-;;(require 'tidal)
-(load-file "~/.emacs.d/tidal/tidal.el")
-(setq tidal-interpreter "~/AppData/Roaming/local/bin/stack.exe")
-(setq tidal-interpreter-arguments
-      (list "repl"
-            "--ghci-options=-XOverloadedStrings"
-        ))
+(add-to-list 'load-path "~/.emacs.d/tidal")
+(require 'haskell-mode)
+(require 'tidal)
+;;(load-file "~/.emacs.d/tidal/tidal.el")
+;;(setq tidal-interpreter "~/AppData/Roaming/local/bin/stack.exe")
+;;(setq tidal-interpreter-arguments
+;;      (list "repl"
+;;            "--ghci-options=-XOverloadedStrings"
+;;        ))
 
 
 ;;C++
@@ -73,7 +73,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (markdown-mode ddskk haskell-mode auto-complete))))
+ '(package-selected-packages (quote (markdown-mode haskell-mode auto-complete))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
