@@ -9,6 +9,7 @@
 ;; basic settings
 (setq default-directory "~/")
 (setq command-line-default-directory "~/")
+(set-frame-size (selected-frame) 110 48)
 (set-language-environment  'utf-8)
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
@@ -18,7 +19,7 @@
 (scroll-bar-mode 0)
 (show-paren-mode t)
 (setq-default line-spacing 3)
-;;(add-to-list 'default-frame-alist '(alpha . 85))
+(add-to-list 'default-frame-alist '(alpha . 90))
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
